@@ -1,20 +1,23 @@
-﻿//Подсказываем, что именно нужно сделать пользователю
-Console.Write("Введите число №1:");
-//ReadLine просит ввести данные, принимает в любом формате, Parse преобразует строку String в int
-int number_a = int.Parse(Console.ReadLine());
+﻿// Развернуть массив
+Console.Write("Введите число: ");
+    int number = int.Parse (Console.ReadLine());   
+    
+    if (number <=0 )
+    Console.WriteLine("Число не является палиндромом");
+    else
+    {
+    int oldValue = number;
+    int newValue = 0;
+            while (number > 0)
+            {
+                int tmp = number % 10;
+                newValue = newValue * 10 + tmp;
+                number = number / 10;
+            }
+            if (newValue == oldValue)
+                Console.WriteLine("Число является палиндромом");
+            else
+                Console.WriteLine("Число не является палиндромом");
+    }     
+       
 
-Console.Write("Введите число №2:");
-int number_b = int.Parse(Console.ReadLine());
-
-if  (number_a>number_b)
-{
-    Console.WriteLine($"минимальное значение = {number_b}, максимальное значение = {number_a}");
-}
-if (number_a<number_b)
-{
-    Console.WriteLine($"минимальное значение = {number_a}, максимальное значение = {number_b}");
-}
-if (number_a==number_b)
-{
-    Console.WriteLine("числа равны");
-}
